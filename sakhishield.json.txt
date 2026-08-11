@@ -1,0 +1,333 @@
+{
+    "widgets": [
+        {
+            "x": 0,
+            "y": 0,
+            "type": "static-text",
+            "title": "App Header",
+            "width": 12,
+            "height": 7,
+            "content": "# 🛡️ SakhiShield\n### *From Financial Information to Financial Resilience*\n\nSakhiShield is a **financial decision-learning tool** designed to help you understand your situation, recognise risks, compare choices, and identify your next step — with clarity and confidence.\n\n> **This tool provides financial education and decision support. It does not provide personalised investment advice or guarantee financial outcomes.**\n\n---\n\n## How to use SakhiShield\n| Stage | What happens |\n|---|---|\n| 1 | Fill in your Financial Profile below |\n| 2 | Review your Financial Snapshot |\n| 3 | See your Goal Prioritisation |\n| 4 | Check your Resilience Gap Analysis |\n| 5 | Compare two Scenario paths |\n| 6 | Use FraudShield to check a suspicious message |\n| 7 | Work through Before You Act |\n| 8 | Get your 30 Day Action Plan |\n| 9 | Receive your Financial Resilience Card |\n\n---\n⚠️ **Privacy notice:** Do NOT enter passwords, PINs, OTPs, bank credentials, account numbers, or other authentication information anywhere in this app."
+        },
+        {
+            "x": 0,
+            "y": 7,
+            "type": "static-text",
+            "title": "Stage 1 Header",
+            "width": 12,
+            "height": 3,
+            "content": "## 📊 Stage 1 — Financial Profile\n\nFill in the fields below. Use approximate figures — precision is not required. Leave a field blank if you do not have the information.\n\n⚠️ Use approximate amounts only. Do NOT enter account numbers, PINs, passwords, OTPs, or bank credentials.\n"
+        },
+        {
+            "x": 0,
+            "y": 10,
+            "type": "text-input",
+            "title": "Monthly Income",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 35000 — your total take-home income per month (approximate)"
+        },
+        {
+            "x": 6,
+            "y": 10,
+            "type": "text-input",
+            "title": "Essential Monthly Expenses",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 12000 — rent, food, utilities, transport, medicine (approximate total)"
+        },
+        {
+            "x": 0,
+            "y": 12,
+            "type": "text-input",
+            "title": "Other Monthly Expenses",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 4000 — subscriptions, dining out, personal care, non-essential spending"
+        },
+        {
+            "x": 6,
+            "y": 12,
+            "type": "text-input",
+            "title": "Existing Obligations or Debt",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 5000 — monthly EMIs, loan repayments, or regular debt payments"
+        },
+        {
+            "x": 0,
+            "y": 14,
+            "type": "text-input",
+            "title": "Current Savings",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 20000 — approximate total saved across all accounts (no account numbers)"
+        },
+        {
+            "x": 6,
+            "y": 14,
+            "type": "text-input",
+            "title": "Primary Financial Goal",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. Build an emergency fund, save for a home, pay off debt, start investing"
+        },
+        {
+            "x": 0,
+            "y": 16,
+            "type": "text-input",
+            "title": "Goal Timeframe",
+            "width": 6,
+            "height": 2,
+            "placeholder": "e.g. 6 months, 2 years, 5 years — how soon do you want to reach this goal?"
+        },
+        {
+            "x": 6,
+            "y": 16,
+            "type": "select",
+            "title": "Financial Experience Level",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "Just starting out",
+                "Some basic knowledge",
+                "Comfortable with basics",
+                "Experienced"
+            ],
+            "defaultValue": "Just starting out"
+        },
+        {
+            "x": 0,
+            "y": 18,
+            "type": "text-input",
+            "title": "Relevant Constraints",
+            "width": 12,
+            "height": 2,
+            "isOptional": true,
+            "placeholder": "e.g. single income household, supporting dependents, irregular income, recent job change — optional"
+        },
+        {
+            "x": 0,
+            "y": 20,
+            "type": "static-text",
+            "title": "Stage 2 Header",
+            "width": 12,
+            "height": 2,
+            "content": "## 💰 Stage 2 — Financial Snapshot\nYour financial picture, calculated transparently from the information you provided."
+        },
+        {
+            "x": 0,
+            "y": 22,
+            "type": "inferred-text",
+            "title": "Financial Snapshot",
+            "width": 12,
+            "height": 12,
+            "prompt": "Monthly Income: [Monthly Income] Monthly Income\nEssential Expenses: [Essential Monthly Expenses] Essential Monthly Expenses\nOther Expenses: [Other Monthly Expenses] Other Monthly Expenses\nObligations: [Existing Obligations or Debt] Existing Obligations or Debt\nSavings: [Current Savings] Current Savings\nGoal: [Primary Financial Goal] Primary Financial Goal\nTimeframe: [Goal Timeframe] Goal Timeframe\nExperience: [Financial Experience Level] Financial Experience Level\nConstraints: [Relevant Constraints] Relevant Constraints",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 34,
+            "type": "static-text",
+            "title": "Stage 3 Header",
+            "width": 12,
+            "height": 2,
+            "content": "## 🎯 Stage 3 — Goal Prioritisation\nIdentifying your primary financial priority and the key concepts that apply to it."
+        },
+        {
+            "x": 0,
+            "y": 36,
+            "type": "inferred-text",
+            "title": "Goal Prioritisation",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are SakhiShield's Goal Prioritisation module.\nReview the financial information already provided by the user in the earlier stages.\nIdentify the user's most important financial goal.\nExplain briefly:\n1. What the priority goal is.\n2. Why it should be prioritised now.\n3. How the user's current income, expenses, savings, debt and timeframe affect this priority.\nUse only information available in the conversation and earlier stages.\nIf important information is missing, clearly mention that it is missing instead of making up a value.\nKeep the response concise and practical.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 48,
+            "type": "static-text",
+            "title": "Stage 4 Header",
+            "width": 12,
+            "height": 2,
+            "content": "## 🔍 Stage 4 — Resilience Gap Analysis\nEvaluating your financial readiness across key areas using qualitative status indicators."
+        },
+        {
+            "x": 0,
+            "y": 50,
+            "type": "inferred-text",
+            "title": "Resilience Gap Analysis",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are SakhiShield's Resilience Gap Analysis module.\nReview the user's financial information and the results from the earlier stages.\nEvaluate these five areas:\n1. Emergency Readiness\n2. Expense Pressure\n3. Goal Readiness\n4. Protection Awareness\n5. Information Gaps\nFor each area, give a short assessment using one of these simple descriptions:\nStrong\nModerate\nNeeds Improvement\nInformation Needed\nThen give one short reason for each assessment.\nDo not invent financial information. Use only information available from the user and earlier stages.\nKeep the analysis concise and easy to understand.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 62,
+            "type": "static-text",
+            "title": "Stage 5 Header",
+            "width": 12,
+            "height": 2,
+            "content": "## 🔀 Stage 5 — Scenario Comparator\nComparing two hypothetical financial paths relevant to your stated goal."
+        },
+        {
+            "x": 0,
+            "y": 64,
+            "type": "inferred-text",
+            "title": "Scenario Comparator",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are SakhiShield's Scenario Comparator.\nUse the user's financial information and the earlier analysis.\nCreate two realistic financial approaches for the user's primary goal.\nFor each approach provide:\nScenario A:\n- Brief description\n- Main trade-off\n- Main risk\nScenario B:\n- Brief description\n- Main trade-off\n- Main risk\nThe two scenarios should represent meaningfully different approaches.\nUse only information available from the user and earlier stages.\nDo not invent exact interest rates, investment returns, market data, or financial product details.\nKeep the comparison concise and educational.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.4
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 78,
+            "type": "static-text",
+            "title": "Stage 6 Header",
+            "width": 12,
+            "height": 3,
+            "content": "## 🛡️ Stage 6 — FraudShield\nPaste a suspicious financial message below to check for potential warning signals.\n\n⚠️ **Do NOT paste passwords, PINs, OTPs, account numbers, or bank credentials.**"
+        },
+        {
+            "x": 0,
+            "y": 81,
+            "type": "text-input",
+            "title": "Suspicious Message",
+            "width": 12,
+            "height": 3,
+            "isOptional": true,
+            "placeholder": "Paste the suspicious SMS, email, or message here. Do NOT include passwords, PINs, OTPs, or account credentials."
+        },
+        {
+            "x": 0,
+            "y": 84,
+            "type": "inferred-text",
+            "title": "FraudShield Analysis",
+            "width": 12,
+            "height": 12,
+            "prompt": "You are SakhiShield's FraudShield module, an educational fraud-awareness tool. You do NOT have access to live fraud databases, verification systems, or the ability to definitively confirm whether a message is fraudulent.\n\nAnalyze the message text provided below for potential warning signals.\n\nSuspicious Message:\n[Suspicious Message]\n\n---\n\nIf the Suspicious Message field is empty, output:\n\n**FRAUDSHIELD**\nNo message provided. Paste a suspicious message above to analyze it for potential warning signals.\n\n---\n\nIf a message IS provided, produce output in this EXACT structure:\n\n**FRAUDSHIELD ANALYSIS**\n\n**1. Message Elements Observed**\nSummarize the key elements of the message as observed. Do not add interpretation yet. Be factual and brief. (3-5 sentences)\n\n**2. Potential Warning Signals Detected**\nList any warning signals present in the message. Look for:\n- Urgent language or countdown pressure (\"act now,\" \"limited time,\" \"account will be closed\")\n- Threats or consequences (\"your account will be blocked,\" \"legal action\")\n- Requests for sensitive information (passwords, PINs, OTPs, account numbers, card details)\n- Suspicious links or instructions to click/download\n- Requests to bypass normal verification channels\n- Impersonation of official organizations (banks, government, known companies)\n- Too-good-to-be-true offers (guaranteed returns, lottery wins, unexpected refunds)\n- Poor grammar, spelling, or formatting inconsistencies\n\nIf warning signals are detected, list them clearly. If no obvious warning signals are detected, state: \"No obvious warning signals were identified from the text provided.\"\n\n**3. Why These Signals Matter (Educational Context)**\nExplain in plain language why these warning signals are educationally significant. Keep this educational, not alarmist. (3-4 sentences)\n\n**4. What Cannot Be Verified**\nList what cannot be verified from the message text alone. Be clear that this analysis does not confirm or rule out fraud. Examples:\n- Whether the sender is legitimate\n- Whether any links are safe\n- Whether the offer or threat is real\n- Whether the organization mentioned actually sent this message\n\n**5. Safe Verification Steps**\n\nAlways provide these 3 steps regardless of outcome:\n1. Do NOT click any links or follow instructions in the message until you independently verify its legitimacy.\n2. Contact the organization directly using contact information you find independently (from their official website, official app, or verified customer service number) — do NOT use contact details provided in the suspicious message.\n3. Do NOT share passwords, PINs, OTPs, account numbers, or other authentication credentials in response to unexpected messages.\n\nAdd 1-2 additional steps relevant to the specific message if appropriate.\n\n---\n\n**Important Disclaimer**\nThis analysis is educational and based only on the text provided. It does not constitute a professional security assessment or guarantee that a message is safe or fraudulent. When in doubt, verify independently through official channels.\n\n---\nIMPORTANT RULES:\n- Analyze ONLY the text provided.\n- Do NOT state definitively: \"This is a scam\" or \"This is safe.\"\n- Use language like: \"Potential warning signals detected\" or \"These indicators warrant independent verification.\"\n- If no obvious warning signals exist, do NOT guarantee the message is safe.\n- Always provide safe verification steps.\n- Do NOT request that users paste passwords, PINs, OTPs, or account credentials.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 96,
+            "type": "static-text",
+            "title": "Stage 7 Header",
+            "width": 12,
+            "height": 3,
+            "content": "## ⚠️ Stage 7 — BEFORE YOU ACT\n### The Decision-Learning Framework\n\nThis is where SakhiShield helps you **think through a decision** before making it. Review the five key areas below."
+        },
+        {
+            "x": 0,
+            "y": 99,
+            "type": "inferred-text",
+            "title": "Before You Act",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are SakhiShield's Before You Act decision-learning module.\nReview the user's financial information and the analysis from the earlier stages.\nCreate a concise checklist of important things the user should consider before making a financial decision.\nCover these five areas:\n1. GOAL — What financial goal is the user trying to achieve?\n2. CAPACITY — What can the user realistically afford?\n3. RISK — What could negatively affect the decision?\n4. TRADE-OFF — What is the user giving up by choosing this approach?\n5. INFORMATION GAP — What important information still needs to be verified?\nGive one practical question for each area.\nUse only information available from the user and earlier stages.\nDo not invent missing financial information.\nKeep the output concise and practical.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 113,
+            "type": "static-text",
+            "title": "Stage 8 Header",
+            "width": 12,
+            "height": 2,
+            "content": "## 📋 Stage 8 — 30-Day Action Plan\nPractical next steps you can take over the next month, based on your situation."
+        },
+        {
+            "x": 0,
+            "y": 115,
+            "type": "inferred-text",
+            "title": "30 Day Action Plan",
+            "width": 12,
+            "height": 14,
+            "prompt": "You are SakhiShield, a financial education and decision-support tool. You do NOT provide personalised investment instructions.\n\nUsing all previous stages, generate a practical 30-day action plan.\n\nFinancial Snapshot:\n[Financial Snapshot]\n\nGoal Prioritisation:\n[Goal Prioritisation]\n\nResilience Gap Analysis:\n[Resilience Gap Analysis]\n\nScenario Comparator:\n[Scenario Comparator]\n\nBefore You Act:\n[Before You Act]\n\n---\n\nProduce output in this EXACT structure:\n\n**30-DAY ACTION PLAN**\n\nHere are practical educational next steps you can take over the next 30 days based on your current situation.\n\n---\n\n### A. ACTIONS TO CONSIDER NOW\n\nList 3-5 practical actions the user could take in the next week. These should be realistic, specific, and based on available information. Use action-oriented language but avoid direct financial instructions.\n\nExamples:\n- Track your actual expenses for the next two weeks to verify the estimates you provided\n- List all existing financial commitments (subscriptions, EMIs, recurring payments)\n- Review your current savings accounts and note the interest rates\n- Identify one area where expenses could be reduced without significant lifestyle impact\n- Create a simple emergency contact list for your financial institutions\n\nDo NOT recommend specific financial products. Frame these as information-gathering and awareness-building actions.\n\n---\n\n### B. INFORMATION TO VERIFY\n\nList 3-5 specific pieces of information the user should independently verify before making any financial decisions. Be specific about what needs verification and why.\n\nExamples:\n- Current interest rates for savings accounts and fixed deposits from at least 2-3 banks\n- Eligibility criteria and actual terms for any financial products mentioned in the scenarios\n- Your current insurance coverage (health, life) and any gaps\n- Tax implications of different savings or investment approaches relevant to your goal\n- Official details of any government schemes or benefits you may be eligible for\n\nAlways include: \"Verify through official sources only — do not rely on unsolicited messages, calls, or unverified websites.\"\n\n---\n\n### C. QUESTIONS TO ASK A QUALIFIED PROFESSIONAL\n\nList 3-5 questions the user should ask when consulting a qualified financial professional, if they choose to do so. Frame these as open-ended questions that encourage discussion.\n\nExamples:\n- Given my goal and timeframe, what approach would you suggest and why?\n- What are the fees, charges, and lock-in periods I should be aware of?\n- How does this product or approach handle risk, and what could go wrong?\n- What happens if I need to access my money earlier than planned?\n- Are there tax implications I should understand before proceeding?\n\nAlways end this section with: \"Ensure any professional you consult is appropriately qualified and registered with relevant regulatory bodies.\"\n\n---\n\n### D. ITEMS TO REVIEW LATER (30-Day Checklist)\n\nCreate a short reusable checklist the user can copy and revisit in 30 days. This should feel like a review template, not a one-time task list.\n\nFormat as a checklist with checkboxes:\n\n**Review this checklist in 30 days:**\n\n☐ Have I tracked my actual income and expenses?\n☐ Have I verified the key information I identified as missing?\n☐ Have my financial circumstances or priorities changed?\n☐ Have I reduced or eliminated any unnecessary expenses?\n☐ Do I have a clearer picture of my goal and timeframe?\n☐ Have I taken any steps toward building or strengthening my emergency fund?\n☐ Have I consulted a qualified professional if needed?\n☐ Do I feel more confident about my next financial decision?\n\nAdd 1-2 items specific to the user's stated goal.\n\n---\n\n**Important Reminder**\nThis action plan is based on the information you provided and is for educational purposes. It does not constitute personalised investment advice. Adjust these actions based on your actual circumstances and verified information.\n\n---\nIMPORTANT RULES:\n- Make all actions practical and realistic.\n- Base recommendations on information available from previous stages.\n- Do NOT give personalised investment instructions.\n- Do NOT recommend specific financial products or schemes.\n- If important information is missing, explicitly state what should be verified.\n- Keep Section D concise and reusable as a 30-day review template.\n- Use conditional and educational language throughout.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 129,
+            "type": "static-text",
+            "title": "Stage 9 Header",
+            "width": 12,
+            "height": 3,
+            "content": "## 🎯 Stage 9 — Financial Resilience Card\n### Your Complete Decision Summary\n\nThis is your final comprehensive summary — a concise \"decision card\" you can reference or share with a qualified professional."
+        },
+        {
+            "x": 0,
+            "y": 132,
+            "type": "inferred-text",
+            "title": "Financial Resilience Card",
+            "width": 12,
+            "height": 16,
+            "prompt": "All monetary values must be displayed in Indian Rupee (₹), regardless of how the source widget displays them. Do not use $ or USD.\n[Financial Snapshot] [Goal Prioritisation] [Resilience Gap Analysis] [Scenario Comparator] [FraudShield Analysis] [Before You Act] [30 Day Action Plan]",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-4-5-sonnet-v1-0",
+                "temperature": 0.3
+            },
+            "printNewlines": true
+        },
+        {
+            "x": 0,
+            "y": 148,
+            "type": "select",
+            "title": "widget0",
+            "width": 12,
+            "height": 2,
+            "options": [
+                "Option 1",
+                "Option 2"
+            ],
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 150,
+            "type": "document",
+            "title": "widget1",
+            "width": 12,
+            "height": 7
+        },
+        {
+            "x": 0,
+            "y": 157,
+            "type": "text-input",
+            "title": "widget2",
+            "width": 12,
+            "height": 4
+        }
+    ]
+}
